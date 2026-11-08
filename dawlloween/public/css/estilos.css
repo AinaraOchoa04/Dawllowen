@@ -1,0 +1,561 @@
+/* Paleta de la Mansión Umbría
+   Noche        #140910
+   Ciruela      #2c1638
+   Panel        #3b214c
+   Línea        #5a3d6e
+   Hueso        #f3ecdf
+   Texto suave  #d2c6b8
+   Tóxico       #c6f54a
+   Tóxico fondo #243808
+   Sangre       #8e1d3a
+   Sangre viva  #d83656
+   Oro          #e2b657
+   Oro oscuro   #6e5420
+*/
+
+@font-face {
+    font-family: "Nunito Local";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fuentes/nunito-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Creepster Local";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fuentes/creepster-latin.woff2") format("woff2");
+}
+
+:root {
+    --noche: #140910;
+    --ciruela: #2c1638;
+    --panel: #3b214c;
+    --linea: #5a3d6e;
+    --hueso: #f3ecdf;
+    --suave: #d2c6b8;
+    --toxico: #c6f54a;
+    --toxico-fondo: #243808;
+    --sangre: #8e1d3a;
+    --sangre-viva: #d83656;
+    --oro: #e2b657;
+    --oro-oscuro: #6e5420;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at top, #3a1848 0%, transparent 52%),
+        var(--noche);
+    color: var(--hueso);
+    font-family: "Nunito Local", "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+.marca {
+    font-family: "Creepster Local", "Nunito Local", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 8vw, 5.2rem);
+    margin: 0 0 0.4rem;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+h3 {
+    font-family: "Nunito Local", "Segoe UI", sans-serif;
+    font-weight: 800;
+}
+
+a {
+    color: var(--oro);
+}
+
+a:hover {
+    color: var(--toxico);
+}
+
+:focus-visible {
+    outline: 3px solid var(--toxico);
+    outline-offset: 3px;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+.saltar {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    background: var(--toxico);
+    color: var(--noche);
+    padding: 0.4rem 0.7rem;
+    z-index: 40;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.saltar:focus {
+    top: 0.5rem;
+}
+
+.cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(20, 9, 16, 0.94);
+    border-bottom: 1px solid var(--linea);
+}
+
+.marca {
+    font-size: 1.9rem;
+    color: var(--hueso) !important;
+    text-decoration: none;
+}
+
+.cabecera .nav-link {
+    color: var(--hueso) !important;
+    font-weight: 700;
+}
+
+.cabecera .nav-link.activo,
+.cabecera .nav-link[aria-current="page"] {
+    color: var(--toxico) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--toxico);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f3ecdf' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.pagina {
+    padding-top: 1.6rem;
+    padding-bottom: 2.5rem;
+}
+
+.sobre-titulo {
+    margin: 0;
+    color: var(--toxico);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+}
+
+.bajada {
+    max-width: 38rem;
+    font-size: 1.15rem;
+}
+
+.cuenta {
+    color: var(--suave);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.acciones,
+.filtros,
+.mandos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.btn-lapida,
+.btn-niebla {
+    display: inline-block;
+    margin-bottom: 0.85rem;
+    padding: 0.7rem 1.25rem;
+    border-radius: 80px 80px 16px 16px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 2px solid var(--toxico);
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-lapida {
+    background: var(--toxico-fondo);
+    color: var(--hueso);
+}
+
+.btn-lapida::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 7px;
+    height: 0;
+    background: var(--sangre-viva);
+    border-radius: 0 0 6px 6px;
+    transform: translateX(-50%);
+    transition: height 0.2s ease;
+}
+
+.btn-lapida:hover,
+.btn-lapida:focus-visible {
+    color: var(--hueso);
+}
+
+.btn-lapida:hover::after,
+.btn-lapida:focus-visible::after {
+    height: 14px;
+    bottom: -14px;
+}
+
+.btn-niebla {
+    background: transparent;
+    border-color: var(--hueso);
+    color: var(--hueso);
+}
+
+.btn-niebla:hover,
+.btn-niebla:focus-visible {
+    background: var(--hueso);
+    color: var(--noche);
+}
+
+.panel {
+    background: var(--ciruela);
+    border: 1px solid var(--linea);
+    border-radius: 20px;
+    padding: 1.1rem;
+}
+
+#caldero {
+    height: 5.2rem;
+    border-radius: 0 0 48px 48px;
+    background: var(--toxico-fondo);
+    border: 2px solid var(--linea);
+    margin-bottom: 0.8rem;
+}
+
+.pocion label,
+.formulario label,
+.buscar {
+    display: grid;
+    gap: 0.3rem;
+    font-weight: 800;
+}
+
+.pocion select,
+.formulario input,
+.formulario textarea,
+.buscar input,
+.pocion input {
+    width: 100%;
+    background: var(--noche);
+    color: var(--hueso);
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    padding: 0.65rem 0.75rem;
+}
+
+.formulario {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.formulario textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.bloque {
+    margin-top: 2.6rem;
+}
+
+.pasos,
+.equipo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.paso,
+.persona {
+    background: var(--ciruela);
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    padding: 1rem;
+}
+
+.paso span,
+.inicial {
+    display: inline-grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: var(--toxico);
+    color: var(--noche);
+    font-weight: 800;
+}
+
+.card.receta {
+    background: var(--ciruela);
+    color: var(--hueso);
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+}
+
+.card.receta.receta-top {
+    border: 3px solid var(--oro);
+    box-shadow: 0 0 0 4px rgba(226, 182, 87, 0.2);
+}
+
+.etiqueta {
+    color: var(--suave);
+    margin-bottom: 0.4rem;
+}
+
+.insignia-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #1a1408;
+    background: var(--oro);
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 0.12rem 0.55rem;
+    font-size: 0.85rem;
+}
+
+.chip,
+.btn-favorito {
+    border-radius: 999px;
+    border: 1px solid var(--linea);
+    background: var(--noche);
+    color: var(--hueso);
+    padding: 0.4rem 0.85rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.chip.activo,
+.chip[aria-pressed="true"] {
+    background: var(--toxico);
+    color: var(--noche);
+    border-color: var(--toxico);
+}
+
+.btn-favorito.guardada {
+    color: var(--oro);
+    border-color: var(--oro);
+}
+
+.barra-recetas {
+    display: grid;
+    gap: 0.9rem;
+    margin: 1rem 0 1.2rem;
+}
+
+.buscar input {
+    max-width: 22rem;
+}
+
+.alerta {
+    background: #3d1422;
+    border: 1px solid var(--sangre-viva);
+    color: var(--hueso);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+}
+
+.alerta-ok {
+    background: #1d2e12;
+    border: 1px solid var(--toxico);
+    color: var(--hueso);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+}
+
+.aviso-archivo {
+    margin: 0;
+    border-radius: 0;
+}
+
+.dos-columnas {
+    display: grid;
+    grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.tabla-caja {
+    overflow-x: auto;
+}
+
+.tabla-pruebas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-pruebas th,
+.tabla-pruebas td {
+    border-bottom: 1px solid var(--linea);
+    padding: 0.45rem 0.3rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.modal-content {
+    background: var(--ciruela);
+    color: var(--hueso);
+    border: 1px solid var(--oro);
+}
+
+.btn-cerrar {
+    background: transparent;
+    color: var(--hueso);
+    border: 0;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.7rem;
+    max-width: 40rem;
+    margin-top: 1rem;
+}
+
+.carta {
+    aspect-ratio: 3 / 4;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.carta-inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.35s ease;
+}
+
+.carta.volteada .carta-inner,
+.carta.encontrada .carta-inner {
+    transform: rotateY(180deg);
+}
+
+.cara,
+.dorso {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    border: 2px solid var(--linea);
+}
+
+.dorso {
+    background: radial-gradient(circle at 50% 40%, var(--panel), var(--noche) 70%);
+    color: var(--toxico);
+    font-family: "Creepster Local", sans-serif;
+    font-size: 2rem;
+}
+
+.dorso::before {
+    content: "?";
+}
+
+.cara {
+    background: var(--hueso);
+    color: var(--noche);
+    transform: rotateY(180deg);
+    font-size: 2.1rem;
+}
+
+.carta.encontrada .cara {
+    border-color: var(--toxico);
+    background: #e7f7c4;
+}
+
+.marcador {
+    font-weight: 800;
+}
+
+.nota {
+    color: var(--suave);
+    max-width: 42rem;
+}
+
+.pie {
+    margin-top: 2rem;
+    padding: 1.4rem 0 2rem;
+    border-top: 1px solid var(--linea);
+    text-align: center;
+}
+
+#arana {
+    background: transparent;
+    border: 0;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+#secreto {
+    color: var(--toxico);
+    font-weight: 800;
+}
+
+.prosa {
+    max-width: 42rem;
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .pasos,
+    .equipo,
+    .dos-columnas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .tablero {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carta-inner,
+    .btn-lapida::after {
+        transition: none;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio · Mansión Umbría</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+        <nav class="navbar navbar-expand-lg" aria-label="Principal">
+            <div class="container">
+                <a class="navbar-brand marca" href="index.html">Mansión Umbría</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link activo" href="index.html" aria-current="page">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="recetas.html">Recetas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="juego.html">La cripta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html">El grupo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="correo.php">Escribe a Jack</a></li>
+                        <li class="nav-item"><a class="nav-link" id="enlace-cuenta" href="login.php">Entrar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido" class="container pagina">
+        <section class="hero">
+            <div>
+                <p class="sobre-titulo">DAWlloween</p>
+                <h1>Mansión Umbría</h1>
+                <p class="bajada">Recetas para una noche de miedo, un juego de parejas en la cripta y una carta para Jack Skellington.</p>
+                <p id="cuenta-atras" class="cuenta" aria-live="polite">La próxima Noche de Brujas es el 31 de octubre.</p>
+                <div class="acciones">
+                    <a class="btn-lapida" href="recetas.html">Ver recetas</a>
+                    <a class="btn-niebla" href="juego.html">Jugar en la cripta</a>
+                </div>
+            </div>
+
+            <aside class="panel pocion" aria-labelledby="titulo-pocion">
+                <div id="caldero" aria-hidden="true"></div>
+                <h2 id="titulo-pocion">Poción de la noche</h2>
+                <p>Elige tres ingredientes y mezcla. Alguna combinación esconde una receta.</p>
+                <form id="form-pocion">
+                    <label for="ing1">Primer ingrediente
+                        <select id="ing1">
+                            <option value="">Elige…</option>
+                            <option value="calabaza">Calabaza</option>
+                            <option value="granada">Granada</option>
+                            <option value="murcielago">Ala de murciélago</option>
+                            <option value="fantasma">Lágrima de fantasma</option>
+                            <option value="hueso">Azúcar de hueso</option>
+                            <option value="sal">Sal gorda</option>
+                        </select>
+                    </label>
+                    <label for="ing2">Segundo ingrediente
+                        <select id="ing2">
+                            <option value="">Elige…</option>
+                            <option value="calabaza">Calabaza</option>
+                            <option value="granada">Granada</option>
+                            <option value="murcielago">Ala de murciélago</option>
+                            <option value="fantasma">Lágrima de fantasma</option>
+                            <option value="hueso">Azúcar de hueso</option>
+                            <option value="sal">Sal gorda</option>
+                        </select>
+                    </label>
+                    <label for="ing3">Tercer ingrediente
+                        <select id="ing3">
+                            <option value="">Elige…</option>
+                            <option value="calabaza">Calabaza</option>
+                            <option value="granada">Granada</option>
+                            <option value="murcielago">Ala de murciélago</option>
+                            <option value="fantasma">Lágrima de fantasma</option>
+                            <option value="hueso">Azúcar de hueso</option>
+                            <option value="sal">Sal gorda</option>
+                        </select>
+                    </label>
+                    <button class="btn-lapida" type="submit">Mezclar</button>
+                </form>
+                <p id="resultado-pocion" aria-live="polite">El caldero está en silencio.</p>
+            </aside>
+        </section>
+
+        <section class="bloque">
+            <h2>Qué puedes hacer</h2>
+            <div class="pasos">
+                <article class="paso">
+                    <span>1</span>
+                    <h3>Cocinar</h3>
+                    <p>Ocho recetas de Halloween. Las que llevan marco dorado son las top.</p>
+                    <a href="recetas.html">Ir al recetario</a>
+                </article>
+                <article class="paso">
+                    <span>2</span>
+                    <h3>Jugar</h3>
+                    <p>En la cripta hay que encontrar parejas. Se guarda tu mejor marca en este navegador.</p>
+                    <a href="juego.html">Entrar en la cripta</a>
+                </article>
+                <article class="paso">
+                    <span>3</span>
+                    <h3>Escribir a Jack</h3>
+                    <p>Primero hay que entrar. El correo sale con el email de tu cuenta.</p>
+                    <a href="login.php">Entrar</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="bloque">
+            <h2>Recetas con marco dorado</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <article class="card receta receta-top h-100">
+                        <div class="card-body">
+                            <span class="insignia-top">Top</span>
+                            <h3>Caldo de calabaza umbría</h3>
+                            <p>Un caldo naranja oscuro, con pimentón. Vale para cenar antes de salir.</p>
+                            <a class="btn-niebla" href="recetas.html#caldo">Ver receta</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="card receta receta-top h-100">
+                        <div class="card-body">
+                            <span class="insignia-top">Top</span>
+                            <h3>Ponche de granada</h3>
+                            <p>Rojo, frío y sin alcohol. La mezcla secreta de la poción apunta aquí.</p>
+                            <a class="btn-niebla" href="recetas.html#ponche">Ver receta</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="card receta receta-top h-100">
+                        <div class="card-body">
+                            <span class="insignia-top">Top</span>
+                            <h3>Cementerio de cacao</h3>
+                            <p>Base de galleta, crema de chocolate y lápidas clavadas encima.</p>
+                            <a class="btn-niebla" href="recetas.html#cementerio">Ver receta</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="container">
+            <p>Mansión Umbría · Proyecto DAWlloween · 2.º DAW</p>
+            <button type="button" id="arana" aria-label="Araña decorativa">🕷️</button>
+            <p id="secreto" hidden></p>
+        </div>
+    </footer>
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/inicio.js"></script>
+</body>
+</html>
